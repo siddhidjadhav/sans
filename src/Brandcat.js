@@ -27,19 +27,19 @@ function Brandcat() {
               title: "Simple Design- EcoSprout Branding",
               img: "branding.avif",
               desc: "Branding of a start-up seeds company that sells huge variety of seeds at local convenience.",
-              link: "/kungfu" // Link to Card.js
+              link: "/ecosprout" // Link to Card.js
             },
             {
               title: "Redesign- Cafe Bites' Rebranding",
               img: "cafebites.avif",
               desc: "Redesigning of a local cafe in Ujjain.",
-              link: "/delusion" // Link to Kalpana.js
+              link: "/cafebites" // Link to Kalpana.js
             },
             {
               title: "Redesign- Merwans' Rebranding",
               img: "merwans.avif",
               desc: "Re-branding of an established local bakery in Mumbai.",
-              link: "/avantika" // Link to CN.js
+              link: "/merwans" // Link to CN.js
             },
             
           ].map((item, index) => (
