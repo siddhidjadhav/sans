@@ -1,100 +1,91 @@
-import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer'; // Ensure it's imported
+import React from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useNavigate } from 'react-router-dom';
 
 function Catlog() {
-  const { ref, inView } = useInView(); // Use the hook to get ref and inView state
-
+  const { ref, inView } = useInView();
+  const navigate = useNavigate();
   return (
-    <>
-      <div>
-        <h1 className="font-extrabold text-4xl sm:text-5xl lg:text-6xl text-red-500 mt-10 text-center">DIGITAL</h1>
-        <p className="underline text-lg sm:text-xl lg:text-2xl pl-5">Go Back</p>
+    <div className="flex flex-col min-h-screen">
+      {/* Header Section */}
+      <div className="p-5 sm:p-8 md:p-10 lg:p-16 flex flex-col items-center text-center flex-grow">
+        <div className="w-full flex items-center justify-between">
+          <p className="underline text-base sm:text-lg md:text-xl lg:text-2xl cursor-pointer pl-5" onClick={() => navigate(-1)} >
+            Go Back
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold flex-1 text-center">
+            DIGITAL
+          </h1>
+        </div>
 
-        <div className="flex flex-col pt-10 justify-center items-center">
-          {/* First Item */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full max-w-[1200px] mb-10">
-            <div className="flex flex-col sm:w-1/2 p-5 text-center sm:text-left">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Typography - Alpha card set</h1>
-              <p className="text-base sm:text-lg lg:text-xl">Designing playing cards considering exploration of Anatomy of Typography.</p>
-              <button className="mt-5 px-6 py-3 border border-2 border-black rounded-sm hover:bg-black hover:text-white transition-all text-base sm:text-lg lg:text-xl">Read More</button>
-            </div>
-            <img src="Playing Cards Mockup.avif" className="w-[100%] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] object-cover border-2 border-gray-300 rounded-md" alt="Typography" />
-          </div>
+        {/* Cards Container */}
+        <div className="p-5 sm:p-8 md:p-10 lg:p-16 flex flex-col items-center w-full space-y-12">
+          {[
+            {
+              title: "Typography - Alpha Card Set",
+              img: "Playing Cards Mockup.avif",
+              desc: "Designing playing cards considering exploration of Anatomy of Typography.",
+              link: "/card" // Link to Card.js
+            },
+            {
+              title: "Showreel - Kalpana Chawla",
+              img: "kalpana.avif",
+              desc: "Exploring a historical event through a captivating animated timeline with the use of AI tools to generate visuals.\n\nSoftware Used: After Effects.",
+              link: "/kalpana" // Link to Kalpana.js
+            },
+            {
+              title: "Animation - Cartoon Network",
+              img: "cn.avif",
+              desc: "In this assignment, I created animation that visually communicates a topic using Adobe After Effects and Adobe Animate.",
+              link: "/cn" // Link to CN.js
+            },
+            {
+              title: "Motion Poster - Black Mirror",
+              img: "black_mirror.avif",
+              desc: "Animated a motion poster designed using advanced techniques in After Effects.",
+              link: "/blackmirror" // Link to BlackMirror.js
+            },
+            {
+              title: "3D Modelling-Character Design",
+              img: "3D.avif",
+              desc: "A hybrid between a mythical and a human, designed and modelled using Zbrush.",
+              link: "/threed" // Link to ThreeD.js
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col md:flex-row-reverse items-center w-full space-y-6 md:space-y-0 md:space-x-8"
+            >
+              {/* Text Section */}
+              <div className="md:w-1/2 w-full flex flex-col items-center md:items-start text-center md:text-left">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold">
+                  {item.title}
+                </h2>
+                <p className="text-base sm:text-lg md:text-xl mt-4 max-w-md">
+                  {item.desc}
+                </p>
+                <Link to={item.link} className="border border-black px-6 py-3 text-base mt-4 transition duration-300 hover:bg-black hover:text-white">
+                  Read More
+                </Link>
+              </div>
 
-          {/* Second Item */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full max-w-[1200px] mb-10">
-            <div className="flex flex-col sm:w-1/2 p-5 text-center sm:text-left">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Showreel - Kalpana Chawla</h1>
-              <p className="text-base sm:text-lg lg:text-xl">Exploring a historical event through a captivating animated timeline with the use of AI tools to generate visuals. Software Used - After Effects.</p>
-              <button className="mt-5 px-6 py-3 border border-2 border-black rounded-sm hover:bg-black hover:text-white transition-all text-base sm:text-lg lg:text-xl">Read More</button>
+              {/* Image Section */}
+              <div className="md:w-1/2 w-full flex justify-center">
+                <img
+                  src={item.img}
+                  className="w-11/12 sm:w-4/5 md:w-full lg:w-4/5 xl:w-3/5 h-auto rounded-lg shadow-md"
+                  alt={item.title}
+                />
+              </div>
             </div>
-            <img src="kalpana.avif" className="w-[100%] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] object-cover border-2 border-gray-300 rounded-md" alt="Kalpana" />
-          </div>
-
-          {/* Third Item */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full max-w-[1200px] mb-10">
-            <div className="flex flex-col sm:w-1/2 p-5 text-center sm:text-left">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Animation - Cartoon Network</h1>
-              <p className="text-base sm:text-lg lg:text-xl">In this assignment, I created animation that visually communicates a topic using Adobe After Effects and Adobe Animate.</p>
-              <button className="mt-5 px-6 py-3 border border-2 border-black rounded-sm hover:bg-black hover:text-white transition-all text-base sm:text-lg lg:text-xl">Read More</button>
-            </div>
-            <img src="cn.avif" className="w-[100%] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] object-cover border-2 border-gray-300 rounded-md" alt="Cartoon Network" />
-          </div>
-
-          {/* Fourth Item */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full max-w-[1200px] mb-10">
-            <div className="flex flex-col sm:w-1/2 p-5 text-center sm:text-left">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">Motion Poster - Black Mirror</h1>
-              <p className="text-base sm:text-lg lg:text-xl">Animated a motion poster designed using advanced techniques in After Effects.</p>
-              <button className="mt-5 px-6 py-3 border border-2 border-black rounded-sm hover:bg-black hover:text-white transition-all text-base sm:text-lg lg:text-xl">Read More</button>
-            </div>
-            <img src="black_mirror.avif" className="w-[100%] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] object-cover border-2 border-gray-300 rounded-md" alt="Black Mirror" />
-          </div>
-
-          
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between w-full max-w-[1200px] mb-10">
-            <div className="flex flex-col sm:w-1/2 p-5 text-center sm:text-left">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold">3D Modelling - Character Design</h1>
-              <p className="text-base sm:text-lg lg:text-xl">A hybrid between a mythical and a human, designed and modelled using Zbrush.</p>
-              <button className="mt-5 px-6 py-3 border border-2 border-black border-solid hover:bg-black hover:text-white transition-all text-base sm:text-lg lg:text-xl">Read More</button>
-            </div>
-            <img src="3D.avif" className="w-[100%] sm:w-[400px] lg:w-[500px] h-[300px] sm:h-[400px] lg:h-[500px] object-cover border-2 border-gray-300 rounded-md" alt="3D Modelling" />
-          </div>
+          ))}
         </div>
       </div>
-      <div className="bg-black flex flex-col items-center justify-center text-white w-full py-20 space-y-4">
-                {/* Contact and Navigation Lists */}
-                <div className="flex flex-wrap justify-between w-full max-w-3xl items-start gap-4">
-                    <ul className="space-y-1">
-                        <li className="text-lg font-semibold">CONTACT</li>
-                        <li><a href="mailto:sanskritichauhan1234@gmail.com" className="hover:underline">sanskritichauhan1234@gmail.com</a></li>
-                        <li><a href="tel:+919867067656" className="hover:underline">+91 9867067656</a></li>
-                    </ul>
 
-                    <nav>
-                        <ul className="flex flex-col items-center space-y-1">
-                            <Link to="/" className="text-lg hover:underline">HOME</Link>
-                            <Link to="/about" className="text-lg hover:underline">ABOUT</Link>
-                            <Link to="/portfolio" className="text-lg hover:underline">PORTFOLIO</Link>
-                            <Link to="/photography" className="text-lg hover:underline">PHOTOGRAPHY</Link>
-                        </ul>
-                    </nav>
-                </div>
-
-                {/* Name Display - Animated */}
-                <motion.div 
-                    ref={ref} // Attach the ref here for visibility detection
-                    className=" text-center"
-                    initial={{ opacity: 0, y: 50 }}
-                    animate={inView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <span className="mt-36 font-extrabold text-4xl lg:text-5xl whitespace-nowrap block">SANSKRITI CHAUHAN</span>
-                </motion.div>
-            </div>
-    </>
+      
+    </div>
   );
 }
 
