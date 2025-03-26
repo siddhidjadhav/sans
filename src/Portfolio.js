@@ -14,9 +14,13 @@ function Portfolio() {
         <>
             <h1 className="font-extrabold text-5xl text-red-600 mt-10 text-center">MY WORKS</h1>
 
-            <Link to="/portfolio" className="flex items-center justify-center text-black underline text-lg font-pacifico pt-10">
+            <a href="https://www.figma.com/proto/Ko4Ae15t6zLVCymQ8dgzE0/Main-portfolio?page-id=0%3A1&node-id=0-10&viewport=406%2C162%2C0.13&t=KgP3DqG0pgjw4zou-1&scaling=scale-down-width&content-scaling=fixed"
+                target="_blank" // Opens the link in a new tab
+                rel="noopener noreferrer" // For security reasons
+                className="flex items-center justify-center text-black underline text-lg font-pacifico pt-10"
+                >
                 My Portfolio
-            </Link>
+                </a>
 
             {/* First Row: Three Images */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10 px-3">
