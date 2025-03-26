@@ -14,7 +14,7 @@ function Card() {
     </p>
       {/* Card 1 - Alpha Card Set with Grey Background and Title */}
       <div className="relative w-full bg-gray-300 p-8">
-        <h2 className="absolute left-4 text-3xl font-bold text-black mt-5">Alpha Card Set - Typography Card</h2>
+        <h2 className="absolute left-4 text-3xl font-bold text-black mb-10">Alpha Card Set - Typography Card</h2>
         <img src="Card1.avif" className="w-full mt-16 h-auto object-cover rounded-lg" alt="Alpha Card Set" />
        </div>
 

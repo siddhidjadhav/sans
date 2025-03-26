@@ -36,12 +36,9 @@ function Sketches() {
   return (
     <>
       {/* Go Back Button */}
-      <p
-        className="underline text-base sm:text-lg md:text-xl lg:text-2xl cursor-pointer pl-5 mt-5"
-        onClick={() => navigate(-1)}
-      >
+      <p className="underline text-base sm:text-lg md:text-xl lg:text-l cursor-pointer pl-5" onClick={() => navigate(-1)} >
         Go Back
-      </p>
+</p>
 
       {/* Heading Section */}
       <div className="flex flex-col items-center justify-center mt-10">

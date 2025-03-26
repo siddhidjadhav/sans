@@ -9,12 +9,9 @@ function Delusion(){
     const [isVideoOpen, setIsVideoOpen] = useState(false);
     return(
         <>
-          <p
-          className="underline text-base sm:text-lg md:text-xl lg:text-l cursor-pointer pl-5"
-          onClick={() => navigate(-1)}
-          >
-          Go Back
-              </p>
+ <p className="underline text-base sm:text-lg md:text-xl lg:text-l cursor-pointer pl-5" onClick={() => navigate(-1)} >
+            Go Back
+    </p>
 
             {/* Heading Section */}
             <div className="flex flex-col items-center justify-center mt-10">

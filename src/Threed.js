@@ -9,7 +9,9 @@ function Threed(){
      const navigate = useNavigate(); 
     return(
         <>
-
+ <p className="underline text-base sm:text-lg md:text-xl lg:text-l cursor-pointer pl-5" onClick={() => navigate(-1)} >
+            Go Back
+    </p>
       
         </>
     );

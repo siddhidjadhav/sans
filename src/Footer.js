@@ -6,6 +6,13 @@ import { useInView } from "react-intersection-observer";
 function Footer() {
   const { ref, inView } = useInView();
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // Smooth scrolling to the top
+    });
+  };
+
   return (
     <footer className="bg-black text-white py-10 px-4 md:px-10 w-full">
       <div className="flex flex-col items-center space-y-8">
@@ -31,10 +38,26 @@ function Footer() {
           {/* Navigation Links */}
           <nav>
             <ul className="flex flex-col text-center md:text-left space-y-2">
-              <Link to="/" className="text-lg hover:underline">HOME</Link>
-              <Link to="/about" className="text-lg hover:underline">ABOUT</Link>
-              <Link to="/portfolio" className="text-lg hover:underline">PORTFOLIO</Link>
-              <Link to="/photography" className="text-lg hover:underline">PHOTOGRAPHY</Link>
+              <li>
+                <Link to="/" className="text-lg hover:underline" onClick={scrollToTop}>
+                  HOME
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-lg hover:underline" onClick={scrollToTop}>
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link to="/portfolio" className="text-lg hover:underline" onClick={scrollToTop}>
+                  PORTFOLIO
+                </Link>
+              </li>
+              <li>
+                <Link to="/photography" className="text-lg hover:underline" onClick={scrollToTop}>
+                  PHOTOGRAPHY
+                </Link>
+              </li>
             </ul>
           </nav>
         </div>

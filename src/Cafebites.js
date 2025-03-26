@@ -9,12 +9,9 @@ function Cafebites() {
     return (
         <div className="w-full min-h-screen relative flex flex-col bg-[#f7ebdf]">
             {/* Full Page First Image with Go Back Button */}
-            <button 
-                className="absolute text-2xl top-4 left-4 text-black px-6 py-3"
-                onClick={() => navigate(-1)}
-            >
-                Go Back
-            </button>
+            <p className="underline text-base sm:text-lg md:text-xl lg:text-l cursor-pointer pl-5" onClick={() => navigate(-1)} >
+        Go Back
+</p>
             <div className="grid grid-cols-1 gap-6 p-6 flex-grow items-center justify-center">
                 <img src="cb1.avif" alt="eco2" className="w-3/4 mx-auto" />
                 <img src="cb2.avif" alt="eco2" className="w-3/4 mx-auto" />

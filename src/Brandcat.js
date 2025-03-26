@@ -9,12 +9,13 @@ function Brandcat() {
   const navigate = useNavigate();
   return (
     <div className="flex flex-col min-h-screen">
+                <p className="underline text-base sm:text-lg md:text-xl lg:text-2xl cursor-pointer pl-5" onClick={() => navigate(-1)} >
+            Go Back
+          </p>
       {/* Header Section */}
       <div className="p-5 sm:p-8 md:p-10 lg:p-16 flex flex-col items-center text-center flex-grow">
         <div className="w-full flex items-center justify-between">
-          <p className="underline text-base sm:text-lg md:text-xl lg:text-2xl cursor-pointer pl-5" onClick={() => navigate(-1)} >
-            Go Back
-          </p>
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold flex-1 text-center text-red-500">
             Branding
           </h1>

@@ -7,16 +7,15 @@ function Ecosprout() {
     const navigate = useNavigate();
 
     return (
+
         <div className="w-full min-h-screen relative flex flex-col bg-white">
+<p className="underline text-base sm:text-lg md:text-xl lg:text-l cursor-pointer pl-5" onClick={() => navigate(-1)} >
+Go Back
+</p>
             {/* Full Page First Image with Go Back Button */}
             <div className="relative w-full h-screen">
                 <img src="eco1.avif" className="w-full h-full object-cover" alt="eco1" />
-                <button 
-                    className="absolute text-2xl top-4 left-4  text-black px-6 py-3"
-                    onClick={() => navigate(-1)}
-                >
-                    Go Back
-                </button>
+                
             </div>
             
             {/* Image Grid */}
