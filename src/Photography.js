@@ -9,13 +9,13 @@ function Photography() {
 
     // Image arrays
     const bmImages = [
-        "/bm1.avif",
-        "/bm2.avif",
-        "/bm3.avif",
-        "/bm4.avif",
-        "/bm5.avif",
-        "/bm6.avif",
-        "/bm7.avif"
+        "/Bm1.avif",
+        "/Bm2.avif",
+        "/Bm3.avif",
+        "/Bm4.avif",
+        "/Bm5.avif",
+        "/Bm6.avif",
+        "/Bm7.avif"
     ];
 
     const carouselImages = [
